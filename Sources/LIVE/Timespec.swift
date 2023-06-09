@@ -39,7 +39,8 @@ extension timespec : ExpressibleByFloatLiteral {
 
 extension timespec : AdditiveArithmetic {
     
-    public static var zero: timespec = {
+    @inline(__always)
+    public static var zero: timespec {
         
         var timespec = timespec()
         
@@ -47,7 +48,7 @@ extension timespec : AdditiveArithmetic {
         timespec.tv_nsec = 0
         
         return timespec
-    }()
+    }
     
     @inline(__always)
     public static func + (lhs: timespec, rhs: timespec) -> timespec {
