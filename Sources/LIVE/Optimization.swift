@@ -35,7 +35,7 @@ private final class Environment {
 ///   - forOptimized: The value that will be adopted in optimized environment.
 ///   - forUnoptimized: The value that will be adopted in unoptimized environment.
 /// - Returns: The adopted value.
-func adoptValue<Value>(forOptimized: @autoclosure () -> Value, forUnoptimized: @autoclosure () -> Value) -> Value {
+public func adoptValue<Value>(forOptimized: @autoclosure () -> Value, forUnoptimized: @autoclosure () -> Value) -> Value {
     
     Environment.isOptimized ? forOptimized() : forUnoptimized()
 }
