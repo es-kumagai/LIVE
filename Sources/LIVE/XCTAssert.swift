@@ -6,9 +6,10 @@
 //
 //
 
+#if canImport(XCTest)
+
 import Foundation
 import XCTest
-
 
 /// Asserts that `value` is within `range`.
 /// - Parameters:
@@ -22,3 +23,5 @@ public func XCTAssert<Value>(_ value: Value, in range: some RangeExpression<Valu
         XCTFail("`\(value)` is not within `\(range)`.", file: file, line: line)
     }
 }
+
+#endif
