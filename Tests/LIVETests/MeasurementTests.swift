@@ -1,4 +1,5 @@
 import XCTest
+import LIVETest
 @testable import LIVE
 
 final class LIVETests: XCTestCase {

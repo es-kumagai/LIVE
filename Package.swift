@@ -13,14 +13,22 @@ let package = Package(
         .library(
             name: "LIVE",
             targets: ["LIVE"]),
+        .library(
+            name: "LIVETest",
+            targets: ["LIVETest"])
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "LIVE"),
+        .target(
+            name: "LIVETest"),
         .testTarget(
             name: "LIVETests",
-            dependencies: ["LIVE"]),
+            dependencies: ["LIVE", "LIVETest"]),
+        .testTarget(
+            name: "LIVETestTests",
+            dependencies: ["LIVETest"]),
     ]
 )
